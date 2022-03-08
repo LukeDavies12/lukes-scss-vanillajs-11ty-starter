@@ -1,0 +1,30 @@
+{
+  "name": "lukes-sass-vanillajs-11ty-starter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "watch:sass": "sass  --no-source-map --watch src/sass:public/css",
+    "watch:eleventy": "eleventy --serve",
+    "build:sass": "sass  --no-source-map src/sass:public/css",
+    "build:eleventy": "eleventy",
+    "postbuild": "postcss public/css/*.css -u autoprefixer cssnano -r --no-map",
+    "start": "npm-run-all build:sass --parallel watch:*",
+    "build": "MY_ENVIRONMENT=production npm-run-all build:sass build:eleventy"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@11ty/eleventy": "^1.0.0",
+    "autoprefixer": "^10.4.2",
+    "cross-env": "^7.0.3",
+    "cssnano": "^5.1.1",
+    "dotenv": "^16.0.0",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.4.8",
+    "postcss-cli": "^9.1.0",
+    "sass": "^1.49.9",
+    "terser": "^5.12.0"
+  }
+}
